@@ -25,4 +25,30 @@ public class Teacher extends User{
             return 0;
         }
     }
+    @Override
+    public String toString() {
+        return "Teacher{" +
+                "teacherId='" + teacherId +'\'' +
+                ", firstName='" + super.getFirstName() + '\'' +
+                ", secondName='" + super.getSecondName() + '\'' +
+                ", patronymic='" + super.getPatronymic() + '\'' +
+                ", dateOfBirth=" + super.getDateOfBirth() +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj){
+            return true;
+        }
+        if (!(obj instanceof Teacher)){
+            return false;
+        }
+        Teacher teacher = (Teacher) obj;
+
+        return getFirstName().equals(teacher.getFirstName()) &&
+                getSecondName().equals(teacher.getSecondName()) &&
+                getPatronymic().equals(teacher.getPatronymic()) &&
+                getDateOfBirth().equals(teacher.getDateOfBirth()) ;
+    }
 }
